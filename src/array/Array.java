@@ -46,7 +46,43 @@ public class Array {
     public boolean isEmpty() {
         return size == 0;
     }
+    
+    /**
+     * 在所有的元素后面再添加一个
+     * @param e
+     */
+    public void addLast(int e) {
+        
+       if(size == data.length){
+           throw new IllegalArgumentException("AddLast failed. Because Array is full.");
+       }
+       
+       data[size] = e;
+       size++;
+    }
    
+    /**
+     * 在指定位置插入数据
+     * @param index
+     * @param e
+     */
+    public void add(int index, int e) {
+        
+        if(size == data.length){
+            throw new IllegalArgumentException("Add failed. Because Array is full.");
+        }
+        
+        if(index < 0 || index > size) {
+            throw new IllegalArgumentException("Add failed. Index must >= 0 or <=size");
+        }
+        
+        for(int i = size - 1; i >= index; i--) {
+            data[i + 1] = data[i];
+        }
+        
+        data[index] = e;
+        size ++;
+    }
 }
 
 
