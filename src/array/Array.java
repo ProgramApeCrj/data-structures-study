@@ -53,12 +53,7 @@ public class Array {
      */
     public void addLast(int e) {
         
-       if(size == data.length){
-           throw new IllegalArgumentException("AddLast failed. Because Array is full.");
-       }
-       
-       data[size] = e;
-       size++;
+        add(size,e);
     }
    
     /**
