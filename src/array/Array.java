@@ -57,6 +57,15 @@ public class Array {
     }
    
     /**
+     * 在有的元素前面再添加一个
+     * @param e
+     */
+    public void addFirst(int e) {
+     
+        add(0,e);
+    }
+    
+    /**
      * 在指定位置插入数据
      * @param index
      * @param e
