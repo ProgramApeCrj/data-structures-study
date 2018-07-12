@@ -88,6 +88,31 @@ public class Array {
         size ++;
     }
     
+    /**
+     * 获得指定下标的值
+     * 通过封装, 保证用户永远无法返回未使用的空间
+     * @param index
+     * @return
+     */
+    public int get(int index) {
+        if(index < 0 || index >= size) {
+            throw new IllegalArgumentException("Get failed. Index is illegal.");
+        }
+        return data[index];
+    }
+    
+    /**
+     * 更改指定下标的数组的值
+     * @param index
+     * @param e
+     */
+    public void set(int index, int e) {
+        if(index < 0 || index >= size) {
+            throw new IllegalArgumentException("Set failed. Index is illegal.");
+        }
+        data[index] = e;
+    }
+    
     @Override
     public String toString() {
         StringBuilder res = new StringBuilder();
