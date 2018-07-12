@@ -113,6 +113,34 @@ public class Array {
         data[index] = e;
     }
     
+    /**
+     * 判断是否数组中是否包含元素e
+     * @param e
+     * @return
+     */
+    public boolean contains(int e) {
+        for(int i = 0; i < size; i++) {
+            if(data[i] == e) {
+                return true;
+            }
+        }
+        return false;
+    }
+    
+    /**
+     * 返回指定元素在数组的下标, 如果没有, 返回-1
+     * @param e
+     * @return
+     */
+    public int find(int e) {
+        for(int i = 0; i < size; i++) {
+            if(data[i] == e) {
+                return i;
+            }
+        }
+        return -1;
+    }
+    
     @Override
     public String toString() {
         StringBuilder res = new StringBuilder();
