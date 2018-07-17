@@ -153,8 +153,8 @@ public class Array {
         int ret = data[index];
         for(int i = index + 1; i < size; i++ ) {
             data[i - 1] = data [i];
-            size --;
         }
+        size --;
         return ret;
     }
     
@@ -174,6 +174,21 @@ public class Array {
      */
     public int removeLast() {
         return remove(size - 1);
+    }
+    
+    /**
+     * 删除指定元素（根据内容）
+     * 并告诉调用者是否删除成功
+     * （不足之处，存在多个相同e时候，只会删除第一个）
+     * @param e
+     */
+    public boolean removeElement(int e) {
+        int index = find(e);
+        if(index != -1) {
+            remove(index);
+            return true;
+        }
+        return false;
     }
     
     @Override

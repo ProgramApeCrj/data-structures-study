@@ -8,20 +8,16 @@ public class Main {
            arr.addLast(i);
         }
         System.out.println(arr);
-        
-        arr.add(1, 100);
-        
+        arr.removeFirst();
+        System.out.println(arr);
+        arr.removeLast();
         System.out.println(arr);
         
-        arr.addFirst(666);
-       
+        arr.remove(3);
         System.out.println(arr);
-        
-        arr.set(0, 888);
-        System.out.println(arr.get(0));
+
+        arr.removeElement(6);
         System.out.println(arr);
-        
-        arr.set(100, 888);
-   
+
     }
 }
