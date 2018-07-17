@@ -141,6 +141,41 @@ public class Array {
         return -1;
     }
     
+    /**
+     * 删除index下标的元素， 并返回删除的元素
+     * @param index
+     * @return
+     */
+    public int remove (int index) {
+        if(index < 0 || index >= size) {
+            throw new IllegalArgumentException("Remove failed. Index is illegal.");
+        }
+        int ret = data[index];
+        for(int i = index + 1; i < size; i++ ) {
+            data[i - 1] = data [i];
+            size --;
+        }
+        return ret;
+    }
+    
+    /**
+     * 删除第一个元素
+     * 数组为null的话，调用remove办法会抛异常，所以这里不需要判断
+     * @return
+     */
+    public int removeFirst() {
+        return remove(0);
+    }
+    
+    /**
+     * 删除最后一个元素
+     * 数组为null的话，调用remove办法会抛异常，所以这里不需要判断
+     * @return
+     */
+    public int removeLast() {
+        return remove(size - 1);
+    }
+    
     @Override
     public String toString() {
         StringBuilder res = new StringBuilder();
